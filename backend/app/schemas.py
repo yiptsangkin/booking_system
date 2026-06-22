@@ -19,6 +19,25 @@ class UserOut(BaseModel):
     role: str
 
 
+class RoleOut(BaseModel):
+    code: Literal["admin", "dealer"]
+    label: str
+
+
+class UserCreate(BaseModel):
+    name: str = Field(min_length=1, max_length=120)
+    email: str = Field(min_length=1, max_length=255)
+    password: str = Field(min_length=6, max_length=120)
+    role: Literal["admin", "dealer"] = "dealer"
+
+
+class UserUpdate(BaseModel):
+    name: Optional[str] = Field(default=None, min_length=1, max_length=120)
+    email: Optional[str] = Field(default=None, min_length=1, max_length=255)
+    password: Optional[str] = Field(default=None, min_length=6, max_length=120)
+    role: Optional[Literal["admin", "dealer"]] = None
+
+
 class LoginResponse(BaseModel):
     token: str
     user: UserOut

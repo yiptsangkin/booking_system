@@ -38,6 +38,7 @@ function fieldName(loc = []) {
   return {
     email: '账号',
     password: '密码',
+    role: '角色',
     order_no: '订单号',
     carrier: '物流公司',
     tracking_no: '运单号',

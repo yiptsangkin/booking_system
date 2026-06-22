@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api import auth, orders, products, shipments, tracking, webhooks
+from app.api import auth, orders, products, shipments, tracking, users, webhooks
 from app.core.config import get_settings
 from app.db import SessionLocal, init_db
 from app.services.seed import seed_defaults
@@ -38,4 +38,5 @@ app.include_router(products.router, prefix=settings.api_prefix)
 app.include_router(orders.router, prefix=settings.api_prefix)
 app.include_router(shipments.router, prefix=settings.api_prefix)
 app.include_router(tracking.router, prefix=settings.api_prefix)
+app.include_router(users.router, prefix=settings.api_prefix)
 app.include_router(webhooks.router, prefix=settings.api_prefix)

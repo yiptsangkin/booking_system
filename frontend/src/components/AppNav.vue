@@ -7,6 +7,7 @@
         <button class="ghost" @click="$router.push('/checkout')">购物车 {{ cart.totalQuantity }}</button>
         <button class="ghost" @click="$router.push('/orders')">订单</button>
         <button v-if="auth.user?.role === 'admin'" class="ghost" @click="$router.push('/inventory')">库存</button>
+        <button v-if="auth.user?.role === 'admin'" class="ghost" @click="$router.push('/users')">用户</button>
         <select class="theme-select" v-model="theme.active" @change="theme.setTheme(theme.active)">
           <option v-for="preset in themePresets" :key="preset.id" :value="preset.id">{{ preset.label }}</option>
         </select>

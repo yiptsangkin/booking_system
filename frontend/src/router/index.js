@@ -6,6 +6,7 @@ import Checkout from '../views/Checkout.vue'
 import Orders from '../views/Orders.vue'
 import OrderDetail from '../views/OrderDetail.vue'
 import Inventory from '../views/Inventory.vue'
+import Users from '../views/Users.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -16,7 +17,8 @@ const router = createRouter({
     { path: '/checkout', component: Checkout, meta: { auth: true } },
     { path: '/orders', component: Orders, meta: { auth: true } },
     { path: '/orders/:orderNo', component: OrderDetail, meta: { auth: true } },
-    { path: '/inventory', component: Inventory, meta: { auth: true, admin: true } }
+    { path: '/inventory', component: Inventory, meta: { auth: true, admin: true } },
+    { path: '/users', component: Users, meta: { auth: true, admin: true } }
   ]
 })
 
